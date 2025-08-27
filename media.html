@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ตรวจงาน online - สื่อการแต่งประโยค</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        /* CSS สำหรับ Banner */
+        .header-banner {
+            background-color: #add8e6;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #0056b3;
+            color: #000;
+        }
+        .header-banner h1 {
+            margin: 0;
+        }
+        /* CSS สำหรับแถบเมนู */
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            text-align: center;
+        }
+        .navbar a {
+            display: inline-block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        /* CSS ใหม่สำหรับ TAB ที่ถูกเลือก */
+        .navbar a.active {
+            background-color: #0056b3;
+            color: white;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        h2 {
+            color: #0056b3;
+            text-align: center;
+        }
+        h3 {
+            color: #0056b3;
+            border-bottom: 1px solid #0056b3;
+            padding-bottom: 5px;
+            text-align: center;
+        }
+        p {
+            line-height: 1.6;
+            text-align: center;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #777;
+        }
+        /* CSS สำหรับการแสดงภาพแบบ 1 ภาพต่อแถว */
+        .gallery-item {
+            width: 100%;
+            margin-bottom: 30px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+        }
+        .gallery-item h3 {
+            color: #555;
+            margin-top: 0;
+        }
+        .gallery-item p {
+            font-size: 0.9em;
+            color: #777;
+            text-align: left;
+            margin: 10px auto 0;
+            max-width: 70%; /* ปรับความกว้างของ paragraph ให้เท่ากับรูปภาพ */
+        }
+        .media-image {
+            display: block;
+            max-width: 70%; /* ปรับขนาดภาพเหลือ 70% */
+            height: auto;
+            margin: auto;
+            border-radius: 8px;
+        }
+        .section-divider {
+            border: 0;
+            border-top: 1px solid #ccc;
+            margin: 30px 0;
+        }
+        /* CSS สำหรับภาพเดี่ยวขนาดใหญ่ด้านบนสุด */
+        .top-image-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .top-image-section img {
+            max-width: 70%; /* ปรับขนาดภาพเหลือ 70% */
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+        /* CSS สำหรับการเน้นคำ */
+        .tense-highlight {
+            color: red;
+            font-weight: bold;
+        }
+        /* CSS สำหรับปุ่ม Back to Top */
+        #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: #0056b3;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 18px;
+        }
+        #myBtn:hover {
+            background-color: #555;
+        }
+        /* CSS สำหรับเมนูลัดด้านข้าง */
+        .side-menu {
+            position: fixed;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            z-index: 100;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        .side-menu a {
+            display: block;
+            padding: 8px 12px;
+            margin-bottom: 5px;
+            text-decoration: none;
+            color: #0056b3;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 12px;
+        }
+        .side-menu a:hover {
+            background-color: #add8e6;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-banner">
+        <h1>ตรวจงาน online</h1>
+    </div>
+    <div class="navbar">
+        <a href="home.html">หน้าหลัก</a>
+        <a href="PA.html">ข้อตกลงPA</a>
+        <a href="researchPA.html">วิจัยPA</a>
+        <a href="media.html" class="active">สื่อการแต่งประโยค</a>
+        <a href="contact.html">ติดต่อ</a>
+    </div>
+    <div class="container">
+        <h2>สื่อการเรียนรู้สำหรับการแต่งประโยค</h2>
+        <p>หน้านี้แสดงตัวอย่างภาพที่ใช้เป็นสื่อในการสอนให้นักเรียนฝึกแต่งประโยค<br>โดยแต่ละภาพมีตัวอย่างประโยคภาษาอังกฤษให้ด้วย</p>
+        
+        <hr class="section-divider">
+
+        <div class="top-image-section">
+            <h3 id="student-activity">ภาพนักเรียนทำกิจกรรม/แบบฝึก<br>เรื่อง การแต่งประโยคเกี่ยวกับสถานที่ในโรงเรียน</h3>
+            <img src="145514_0.jpg" alt="ภาพนักเรียนกำลังสอบ / ทำกิจกรรมในห้องเรียน" class="media-image">
+        </div>
+
+        <hr class="section-divider">
+
+        <div class="gallery-item" id="art-room">
+            <h3>ห้องเรียนศิลปะ / art room</h3>
+            <img src="art_room.png" alt="ภาพห้องเรียนศิลปะ" class="media-image">
+            <p><b>ตัวอย่างการแต่งประโยค :</b><br>
+            <b>Present Simple :</b> The students <span class="tense-highlight">draw</span> pictures in the art room every day.<br>
+            <b>Present Continuous :</b> The boy <span class="tense-highlight">is painting</span> a picture in the art room.<br>
+            <b>Past Simple :</b> The boy <span class="tense-highlight">painted</span> a picture in the art room yesterday.</p>
+        </div>
+        <div class="gallery-item" id="canteen">
+            <h3>โรงอาหาร / canteen</h3>
+            <img src="canteen_revised2.png" alt="ภาพโรงอาหาร" class="media-image">
+            <p><b>ตัวอย่างการแต่งประโยค :</b><br>
+            <b>Present Simple :</b> The students <span class="tense-highlight">eat</span> lunch in the canteen.<br>
+            <b>Present Continuous :</b> The children <span class="tense-highlight">are eating</span> lunch in the canteen now.<br>
+            <b>Past Simple :</b> The students <span class="tense-highlight">ate</span> lunch in the canteen.</p>
+        </div>
+
+        <div class="gallery-item" id="classroom">
+            <h3>ห้องเรียน / classroom</h3>
+            <img src="classroom.png" alt="ภาพห้องเรียน" class="media-image">
+            <p><b>ตัวอย่างการแต่งประโยค :</b><br>
+            <b>Present Simple :</b> The teacher <span class="tense-highlight">teaches</span> English in the classroom.<br>
+            <b>Present Continuous :</b> A student <span class="tense-highlight">is raising</span> his hand in the classroom.<br>
+            <b>Past Simple :</b> The teacher <span class="tense-highlight">taught</span> a math lesson in the classroom this morning.</p>
+        </div>
+        <div class="gallery-item" id="computer-room">
+            <h3>ห้องคอมพิวเตอร์ / computer room</h3>
+            <img src="computer_room.png" alt="ภาพห้องคอมพิวเตอร์" class="media-image">
+            <p><b>ตัวอย่างการแต่งประโยค :</b><br>
+            <b>Present Simple :</b> The students <span class="tense-highlight">learn</span> how to use computers in the computer room.<br>
+            <b>Present Continuous :</b> A boy <span class="tense-highlight">is typing</span> on the keyboard in the computer room.<br>
+            <b>Past Simple :</b> They <span class="tense-highlight">learned</span> how to use computers in the computer room last week.</p>
+        </div>
+
+        <div class="gallery-item" id="gym">
+            <h3>โรงยิม / gym</h3>
+            <img src="gym.png" alt="ภาพโรงยิม" class="media-image">
+            <p><b>ตัวอย่างการแต่งประโยค :</b><br>
+            <b>Present Simple :</b> They <span class="tense-highlight">play</span> basketball and volleyball in the gym.<br>
+            <b>Present Continuous :</b> Two boys <span class="tense-highlight">are bouncing</span> a basketball in the gym.<br>
+            <b>Past Simple :</b> They <span class="tense-highlight">played</span> basketball in the gym yesterday.</p>
+        </div>
+        <div class="gallery-item" id="library">
+            <h3>ห้องสมุด / library</h3>
+            <img src="library2.png" alt="ภาพห้องสมุด" class="media-image">
+            <p><b>ตัวอย่างการแต่งประโยค :</b><br>
+            <b>Present Simple :</b> The students <span class="tense-highlight">read</span> books quietly in the library.<br>
+            <b>Present Continuous :</b> A girl <span class="tense-highlight">is helping</span> a boy find a book in the library.<br>
+            <b>Past Simple :</b> The students <span class="tense-highlight">read</span> books in the library yesterday.</p>
+        </div>
+
+        <div class="gallery-item" id="music-room">
+            <h3>ห้องดนตรี / music room</h3>
+            <img src="music_room.png" alt="ภาพห้องดนตรี" class="media-image">
+            <p><b>ตัวอย่างการแต่งประโยค :</b><br>
+            <b>Present Simple :</b> The children <span class="tense-highlight">play</span> musical instruments in the music room.<br>
+            <b>Present Continuous :</b> The children <span class="tense-highlight">are playing</span> the drums in the music room.<br>
+            <b>Past Simple :</b> They <span class="tense-highlight">played</span> musical instruments in the music room during the class.</p>
+        </div>
+        <div class="gallery-item" id="school-office">
+            <h3>ห้องพักครู / school office</h3>
+            <img src="office.png" alt="ภาพห้องทำงาน" class="media-image">
+            <p><b>ตัวอย่างการแต่งประโยค :</b><br>
+            <b>Present Simple :</b> The teachers <span class="tense-highlight">work</span> in the school office.<br>
+            <b>Present Continuous :</b> A woman <span class="tense-highlight">is talking</span> on the phone in the school office.<br>
+            <b>Past Simple :</b> The teachers <span class="tense-highlight">worked</span> late in the school office last night.</p>
+        </div>
+
+        <div class="gallery-item" id="playground">
+            <h3>สนามเด็กเล่น / playground</h3>
+            <img src="playground.png" alt="ภาพสนามเด็กเล่น" class="media-image">
+            <p><b>ตัวอย่างการแต่งประโยค :</b><br>
+            <b>Present Simple :</b> Children <span class="tense-highlight">play</span> on the playground.<br>
+            <b>Present Continuous :</b> A girl <span class="tense-highlight">is swinging</span> on the playground.<br>
+            <b>Past Simple :</b> The children <span class="tense-highlight">played</span> happily on the playground.</p>
+        </div>
+        <div class="gallery-item" id="school-gate">
+            <h3>ประตูโรงเรียน / school gate</h3>
+            <img src="school_gate2.png" alt="ภาพหน้าประตูโรงเรียน" class="media-image">
+            <p><b>ตัวอย่างการแต่งประโยค :</b><br>
+            <b>Present Simple :</b> The students <span class="tense-highlight">walk</span> to the school gate.<br>
+            <b>Present Continuous :</b> The children <span class="tense-highlight">are walking</span> into the school gate.<br>
+            <b>Past Simple :</b> The students <span class="tense-highlight">walked</span> to the school gate.</p>
+        </div>
+        
+        <div class="gallery-item" id="science-lab">
+            <h3>ห้องทดลองวิทย์ / science lab</h3>
+            <img src="science_lab.png" alt="ภาพห้องวิทยาศาสตร์" class="media-image">
+            <p><b>ตัวอย่างการแต่งประโยค :</b><br>
+            <b>Present Simple :</b> We <span class="tense-highlight">do</span> science experiments in the science lab.<br>
+            <b>Present Continuous :</b> A girl <span class="tense-highlight">is looking</span> through a microscope in the science lab.<br>
+            <b>Past Simple :</b> We <span class="tense-highlight">did</span> a science experiment in the science lab yesterday.</p>
+        </div>
+        <div class="gallery-item" id="sports-field">
+            <h3>สนามกลางแจ้ง / sports field</h3>
+            <img src="sports_field.png" alt="ภาพสนามกีฬากลางแจ้ง" class="media-image">
+            <p><b>ตัวอย่างการแต่งประโยค :</b><br>
+            <b>Present Simple :</b> The students <span class="tense-highlight">play</span> soccer on the sports field.<br>
+            <b>Present Continuous :</b> The children <span class="tense-highlight">are playing</span> soccer on the sports field.<br>
+            <b>Past Simple :</b> They <span class="tense-highlight">played</span> soccer on the sports field yesterday.</p>
+        </div>
+    </div>
+    <div class="footer">
+        <p>&copy; ทำมาให้ตรวจ online โดยเฉพาะ(จากลุงดำ)</p>
+    </div>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">กลับขึ้นบน</button>
+
+    <div class="side-menu">
+        <a href="#student-activity">ภาพกิจกรรม</a>
+        <a href="#art-room">ห้องศิลปะ</a>
+        <a href="#canteen">โรงอาหาร</a>
+        <a href="#classroom">ห้องเรียน</a>
+        <a href="#computer-room">ห้องคอมฯ</a>
+        <a href="#gym">โรงยิม</a>
+        <a href="#library">ห้องสมุด</a>
+        <a href="#music-room">ห้องดนตรี</a>
+        <a href="#school-office">ห้องพักครู</a>
+        <a href="#playground">สนามเด็กเล่น</a>
+        <a href="#school-gate">ประตู รร.</a>
+        <a href="#science-lab">ห้องวิทย์</a>
+        <a href="#sports-field">สนามกลางแจ้ง</a>
+    </div>
+
+    <script>
+        let mybutton = document.getElementById("myBtn");
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+</html>
