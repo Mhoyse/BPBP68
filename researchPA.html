@@ -47,7 +47,7 @@
             color: white;
         }
         .container {
-            max-width: 800px;
+            width: 70%; /* แก้ไขค่าตรงนี้ */
             margin: auto;
             background-color: #fff;
             padding: 20px;
@@ -55,8 +55,13 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             margin-top: 20px;
         }
+        /* CSS สำหรับการจัดกึ่งกลางข้อความ */
+        .center-text-wrapper {
+            text-align: center;
+        }
         h2 {
             color: #0056b3;
+            font-size: 40px; /* แก้ไขค่าตรงนี้ */
         }
         h3 {
             color: #0056b3;
@@ -75,7 +80,7 @@
             display: block;
             max-width: 100%;
             height: auto;
-            margin-top: 20px;
+            margin: 20px auto; /* แก้ไขค่าตรงนี้ */
             border-radius: 8px;
         }
         /* สไตล์สำหรับลิงก์และรูปภาพแบบฝึกหัด */
@@ -151,6 +156,65 @@
         .side-menu a:hover {
             background-color: #add8e6;
         }
+        /* สไตล์สำหรับสื่อเปิดหนังสือ */
+        .book-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+            position: relative;
+            perspective: 1500px;
+        }
+        .book {
+            width: 600px;
+            height: 850px;
+            position: relative;
+        }
+        .page {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: transform 1s, z-index 0s;
+            transform-origin: left;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+            background-color: white;
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+            backface-visibility: hidden;
+            cursor: pointer;
+        }
+        .page.flipped {
+            transform: rotateY(-180deg);
+            z-index: 2;
+        }
+        /* CSS สำหรับเมนูลัดของบทวิจัย */
+        .research-menu {
+            position: fixed;
+            top: 20%;
+            left: 20px; /* แก้ไขค่าตรงนี้ */
+            z-index: 100;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+        .research-menu a {
+            display: block;
+            padding: 8px 12px;
+            margin-bottom: 5px;
+            text-decoration: none;
+            color: #0056b3;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .research-menu a:hover {
+            background-color: #add8e6;
+        }
     </style>
 </head>
 <body>
@@ -165,8 +229,10 @@
         <a href="contact.html">ติดต่อ</a>
     </div>
     <div class="container">
-        <h2 id="research-work">ผลงานวิจัย</h2>
-        <p><b>การใช้นิทานภาษาอังกฤษเพื่อพัฒนาทักษะการสร้างประโยคสร้างสรรค์สำหรับนักเรียนชั้นมัธยมศึกษาปีที่ 2</b></p>
+        <div class="center-text-wrapper">
+            <h2 id="research-work">แบบฝึกหัด interactive-online และงานวิจัย 5 บทเต็มเล่ม(ด้านล่าง)</h2>
+            <p><b>การใช้นิทานภาษาอังกฤษเพื่อพัฒนาทักษะการสร้างประโยคสร้างสรรค์สำหรับนักเรียนชั้นมัธยมศึกษาปีที่ 2</b></p>
+        </div>
         <img src="res001.png" alt="ภาพประกอบนิทานภาษาอังกฤษ" class="research-image">
         
         <hr class="section-divider">
@@ -192,7 +258,7 @@
         <p>การใช้นิทานภาษาอังกฤษช่วยให้นักเรียนมีทักษะการสร้างประโยคที่ดีขึ้นอย่างมีนัยสำคัญ
         โดยมีความสามารถในการใช้คำศัพท์และไวยากรณ์เพิ่มขึ้น รวมถึงมีความคิดสร้างสรรค์ในการสร้างเรื่องราวมากขึ้น
         นักเรียนมีความพึงพอใจต่อการเรียนรู้ในระดับมากและมีความกระตือรือร้นในการร่วมกิจกรรม
-        อย่างไรก็ตาม ครูควรให้ความสนใจกับนักเรียนบางคนที่ยังมีส่วนร่วมน้อย</p>
+        อย่างน้อยครูควรให้ความสนใจกับนักเรียนบางคนที่ยังมีส่วนร่วมน้อย</p>
 
         <h3>2. อภิปรายผลการวิจัย</h3>
         <p>ผลวิจัยสอดคล้องกับทฤษฎีการเรียนรู้ภาษาที่สองที่เน้นการเรียนรู้ในบริบทที่มีความหมาย
@@ -206,6 +272,14 @@
         <b>สำหรับการวิจัยครั้งต่อไป:</b> ควรศึกษาผลในระยะยาว, ศึกษาในกลุ่มตัวอย่างที่หลากหลาย,
         เปรียบเทียบกับวิธีการสอนอื่น ๆ และศึกษาปัจจัยที่ส่งผลต่อความพึงพอใจของนักเรียน</p>
     </div>
+    
+    <hr class="section-divider">
+
+    <div class="book-section">
+        <div class="book">
+            </div>
+    </div>
+    
     <div class="footer">
         <p>&copy; ทำมาให้ตรวจ online โดยเฉพาะ(จากลุงดำ)</p>
     </div>
@@ -219,8 +293,21 @@
         <a href="#research-summary">สรุปผลการวิจัย</a>
     </div>
 
+    <div class="research-menu">
+        <a href="#" onclick="goToPage(3); return false;">บทที่ 1</a>
+        <a href="#" onclick="goToPage(6); return false;">บทที่ 2</a>
+        <a href="#" onclick="goToPage(9); return false;">บทที่ 3</a>
+        <a href="#" onclick="goToPage(30); return false;">บทที่ 4</a>
+        <a href="#" onclick="goToPage(36); return false;">บทที่ 5</a>
+        <a href="#" onclick="goToPage(42); return false;">บรรณานุกรม</a>
+    </div>
+
     <script>
-        let mybutton = document.getElementById("myBtn");
+        const mybutton = document.getElementById("myBtn");
+        const bookSection = document.querySelector('.book-section');
+        const researchMenu = document.querySelector('.research-menu');
+        const sideMenu = document.querySelector('.side-menu');
+
         window.onscroll = function() {scrollFunction()};
 
         function scrollFunction() {
@@ -229,13 +316,97 @@
             } else {
                 mybutton.style.display = "none";
             }
+
+            const bookSectionTop = bookSection.getBoundingClientRect().top;
+            if (bookSectionTop <= window.innerHeight && bookSectionTop >= -bookSection.offsetHeight) {
+                researchMenu.style.display = "block";
+                sideMenu.style.display = "none";
+            } else {
+                researchMenu.style.display = "none";
+                sideMenu.style.display = "block";
+            }
         }
 
         function topFunction() {
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
         }
+
+        const imageFiles = [
+            'page-1.jpg', 'page-2.jpg', 'page-3.jpg', 'page-4.jpg', 'page-5.jpg', 'page-6.jpg', 'page-7.jpg',
+            'page-8.jpg', 'page-9.jpg', 'page-10.jpg', 'page-11.jpg', 'page-12.jpg', 'page-13.jpg', 'page-14.jpg',
+            'page-15.jpg', 'page-16.jpg', 'page-17.jpg', 'page-18.jpg', 'page-19.jpg', 'page-20.jpg', 'page-21.jpg',
+            'page-22.jpg', 'page-23.jpg', 'page-24.jpg', 'page-25.jpg', 'page-26.jpg', 'page-27.jpg', 'page-28.jpg',
+            'page-29.jpg', 'page-30.jpg', 'page-31.jpg', 'page-32.jpg', 'page-33.jpg', 'page-34.jpg', 'page-35.jpg',
+            'page-36.jpg', 'page-37.jpg', 'page-38.jpg', 'page-39.jpg', 'page-40.jpg', 'page-41.jpg', 'page-42.jpg',
+            'page-43.jpg', 'page-44.jpg', 'page-45.jpg', 'page-46.jpg', 'page-47.jpg', 'page-48.jpg', 'page-49.jpg',
+            'page-50.jpg', 'page-51.jpg', 'page-52.jpg', 'page-53.jpg', 'page-54.jpg', 'page-55.jpg', 'page-56.jpg',
+            'page-57.jpg', 'page-58.jpg', 'page-59.jpg', 'page-60.jpg', 'page-61.jpg', 'page-62.jpg', 'page-63.jpg',
+            'page-64.jpg', 'page-65.jpg'
+        ];
+
+        const book = document.querySelector('.book');
+        let pages = [];
+        let currentPageIndex = 0;
+
+        function createBookPages() {
+            imageFiles.forEach(file => {
+                const page = document.createElement('div');
+                page.classList.add('page');
+                page.style.backgroundImage = `url('${file}')`;
+                book.appendChild(page);
+                pages.push(page);
+            });
+            pages.forEach((page, index) => {
+                page.style.zIndex = pages.length - index;
+            });
+        }
+
+        function nextPage() {
+            if (currentPageIndex < pages.length - 1) {
+                pages[currentPageIndex].style.zIndex = pages.length;
+                pages[currentPageIndex].classList.add('flipped');
+                currentPageIndex++;
+            }
+        }
+
+        function prevPage() {
+            if (currentPageIndex > 0) {
+                currentPageIndex--;
+                pages[currentPageIndex].classList.remove('flipped');
+                pages[currentPageIndex].style.zIndex = pages.length - currentPageIndex;
+            }
+        }
+
+        function goToPage(index) {
+            if (index >= 0 && index < pages.length) {
+                for (let i = 0; i < pages.length; i++) {
+                    pages[i].classList.remove('flipped');
+                }
+                
+                for (let i = 0; i < index; i++) {
+                    pages[i].classList.add('flipped');
+                }
+                
+                currentPageIndex = index;
+            }
+        }
+
+        book.addEventListener('click', function(event) {
+            const clickedPage = event.target;
+            if (clickedPage.classList.contains('page')) {
+                const pageRect = clickedPage.getBoundingClientRect();
+                const pageMidpointX = pageRect.left + pageRect.width / 2;
+
+                if (event.clientX > pageMidpointX) {
+                    nextPage();
+                } else {
+                    prevPage();
+                }
+            }
+        });
+
+        createBookPages();
     </script>
 </body>
 </html>
-
